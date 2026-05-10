@@ -15,7 +15,9 @@ def advance_due_date(due_str, recurrence):
     """Return next due date string based on recurrence type."""
     current = datetime.strptime(due_str, '%Y-%m-%d')
     r = recurrence.strip().lower()
-    if r == 'monthly':
+    if r == 'daily':
+        next_due = current + timedelta(days=1)
+    elif r == 'monthly':
         month = current.month + 1
         year = current.year + (month - 1) // 12
         month = ((month - 1) % 12) + 1
