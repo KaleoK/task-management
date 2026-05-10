@@ -1,92 +1,48 @@
 ---
-description: Generate today.md, this-week.md, and next-week.md files
+description: Generate Today.md, This Week.md, and Next Week.md
 ---
 
 # today
 
-Generate today.md, this-week.md, and next-week.md files.
+Generate Today.md, This Week.md, and Next Week.md.
 
 ## Process
 
-### Step 1: Generate Daily Task Files
-
-Run the generate-daily-files.py script:
+Run:
 
 ```bash
 python3 ${CLAUDE_PLUGIN_ROOT}/scripts/generate-daily-files.py
 ```
 
-This script will:
-1. Normalize dates in all task files
-2. Calculate current week and next week dates
-3. Archive completed tasks (move to completed/ folder)
-4. Grep for tasks by specific dates
-5. Generate all three files (today.md, this-week.md, next-week.md)
+This script:
+1. Normalizes dates in Tasks.md
+2. Archives completed tasks to Completed.md (advances due date for recurring tasks)
+3. Generates all three view files
 
-### Step 2: Generate Research Digest (Optional)
-
-**Only if `integrations.research_system` is `true` in `~/.claude/task-management-config/config.yaml`:**
-
-1. Run the research digest slash command:
-   ```
-   SlashCommand: /research-system:generate-research-digest
-   ```
-
-2. Add a Research section to today.md (after "In Progress Ideas" section) using the `links.format` setting from config.
-
-## Example Output - today.md
+## Example Output — Today.md
 
 ```markdown
----
-date: 2025-10-03
----
-# Today - Thursday, October 3
+#### Saturday, May 9
 
-## Overdue
-- [ ] [[old-task]] (due: 2025-09-30)
-- [ ] [[another-overdue]] (due: 2025-10-01)
+**Admin**
+- [ ] <span class="p-high">!</span> Complete CM's form
+- [ ] <span class="p-high">!</span> Find Binder
 
-## Due Today
-- [ ] [[give-dog-flea-medicine]]
-- [ ] [[bbc-sale]]
-- [ ] [[schedule-grooming-loosa]]
-
-## In Progress Ideas
-- [[next-ai-project]]
-- [[course-redesign]]
-
-## Research
-- [ ] [Review today's research digest](Research/research-today.md)
+**Personal**
+- [ ] <span class="p-med">!</span> Cook
+- [ ] <span class="p-med">!</span> Tidy Up
 ```
 
-## Example Output - this-week.md
+## Example Output — This Week.md
 
 ```markdown
----
-week_start: 2025-10-04
-week_end: 2025-10-06
----
-# This Week - Week ending October 6
+#### Week Notes
 
-## Friday, October 4
-- [ ] [[client-meeting]]
+#### Sunday, May 10
 
-## Saturday, October 5
-- [ ] [[weekly-review]]
-```
+**Finance**
+- [ ] <span class="p-high">!</span> Review Investments
 
-## Example Output - next-week.md
-
-```markdown
----
-week_start: 2025-10-07
-week_end: 2025-10-13
----
-# Next Week - Week of October 7
-
-## Monday, October 7
-- [ ] [[quarterly-planning]]
-
-## Wednesday, October 9
-- [ ] [[team-sync]]
+**Personal**
+- [ ] <span class="p-med">!</span> Do Laundry
 ```
