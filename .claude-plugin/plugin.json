@@ -1,6 +1,6 @@
 {
   "name": "task-management",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Flat-file task management for Obsidian with daily/weekly views, priority system, and auto-archiving",
   "author": {
     "name": "KaleoK",
