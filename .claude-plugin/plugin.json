@@ -1,0 +1,21 @@
+{
+  "name": "task-management",
+  "version": "1.0.0",
+  "description": "Flat-file task management for Obsidian with daily/weekly views, priority system, and auto-archiving",
+  "author": {
+    "name": "KaleoK",
+    "url": "https://github.com/KaleoK"
+  },
+  "homepage": "https://github.com/KaleoK/task-management",
+  "repository": "https://github.com/KaleoK/task-management",
+  "keywords": [
+    "tasks",
+    "productivity",
+    "markdown",
+    "obsidian",
+    "daily-planning",
+    "weekly-review",
+    "checklist"
+  ],
+  "license": "MIT"
+}
